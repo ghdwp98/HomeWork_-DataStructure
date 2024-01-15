@@ -17,7 +17,7 @@ bool IsOk(string text) {}
 검사할 괄호 : [], {}, ()
 
 예시 : () 완성, (() 미완성, [) 미완성, [[(){}]] 완성
-*/
+*/ 
     class Queue
     {
         public static bool IsOk(string text)
