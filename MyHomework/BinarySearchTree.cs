@@ -160,14 +160,14 @@ namespace DataStructure
         private Node<T> FindNode(T item)  //현재의 노드 반환 
         {
             if (root == null) return null; //빈 트리
-            Node<T> current= root;
-            while(current!=null)
+            Node<T> current= root; //root 부터 차근차근 비교시작
+            while (current!=null)
             {
                 if (root == null)
                 {
                     return null; //루트가 비어있음 --> 빈 트리
                 }
-                Node<T> current = root;  //root 부터 차근차근 비교시작
+                
 
                 if (item.CompareTo(current.item) < 0) //작으면 왼쪽
                 {
