@@ -159,24 +159,30 @@ namespace DataStructure
 
         private Node<T> FindNode(T item)  //현재의 노드 반환 
         {
-            if (root == null)
+            if (root == null) return null; //빈 트리
+            Node<T> current= root;
+            while(current!=null)
             {
-                return null; //루트가 비어있음 --> 빈 트리
-            }
-            Node<T> current = root;  //root 부터 차근차근 비교시작
+                if (root == null)
+                {
+                    return null; //루트가 비어있음 --> 빈 트리
+                }
+                Node<T> current = root;  //root 부터 차근차근 비교시작
 
-            if (item.CompareTo(current.item) < 0) //작으면 왼쪽
-            {
-                current = current.left;
+                if (item.CompareTo(current.item) < 0) //작으면 왼쪽
+                {
+                    current = current.left;
+                }
+                else if (item.CompareTo(current.item) > 0)
+                {
+                    current = current.right;
+                }
+                else //if (item.CompareTo(current.item) == 0)
+                {
+                    return current;
+                }
             }
-            else if (item.CompareTo(current.item) > 0)
-            {
-                current = current.right;
-            }
-            else //if (item.CompareTo(current.item) == 0)
-            {
-                return current;
-            }
+           
             return null; //모든 반복 끝날 때 까지 못찾음
         }
     }
